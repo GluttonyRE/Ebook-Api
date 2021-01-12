@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/me', function(){
+    return ['Nama' => 'HananZulfanR', 
+    'Kelas' => 'XII RPL 2', 
+    'Absen' => '34',
+    'Alamat' => 'Purbalingga',
+    'Gender' => 'Laki Laki'];
+});
+
+Route::get('auth', 'AuthController@me'); 
